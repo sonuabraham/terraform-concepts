@@ -1,3 +1,4 @@
+/*
 provider "aws" {
   region = "ap-southeast-2"
 }
@@ -131,3 +132,4 @@ output "public_route_tables" {
 output "public_subnets" {
   value = local.public_subnet_ids
 }
+*/

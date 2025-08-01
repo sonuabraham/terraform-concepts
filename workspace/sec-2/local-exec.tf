@@ -1,3 +1,15 @@
+resource "aws_iam_user" "tesUser" {
+  name = "ad-user"
+
+  provisioner local-exec {
+    command = "echo User ${self.name} created with ARN ${self.arn} > user_info.txt"
+  }
+
+  provisioner local-exec {
+    command = "aws iam create-login-profile --user-name ${self.name} --password 'Test@1234' --no-password-reset-required"
+  }
+    
+}
 /*
 provider "aws" {
   region = "ap-southeast-2"
@@ -6,7 +18,8 @@ provider "aws" {
 # Get the VPC by tag name
 data "aws_vpc" "selected" {
   filter {
-    name   = "tag:Name"
+    name   = "tag:Na
+    me"
     values = ["DirectoryStack/VPC"]
   }
 }
