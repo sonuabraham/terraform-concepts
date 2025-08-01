@@ -1,4 +1,3 @@
-//Added comment 
 
 terraform {
   required_providers {
