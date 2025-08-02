@@ -2,7 +2,7 @@ resource "aws_iam_user" "tesUser" {
   name = "ad1-user"
 
   provisioner "local-exec" {
-    command = "echo User ${self.name} created with ARN ${self.arn} > user_info.txt"
+    command = "User ${self.name} created with ARN ${self.arn} > user_info.txt"
   }
 
   provisioner "local-exec" {
